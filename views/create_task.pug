@@ -1,0 +1,18 @@
+extends layout.pug
+
+block content
+  main.create-task
+    
+    if success
+      p.success New Task was added successfully
+
+    if error
+      p.error Please add task (title & body) before submitting
+
+    form(method="POST")
+      label.label ToDo Title
+      input(class="task-input" name="title")
+      
+      label.label ToDo description
+      textarea(class="task-input" name="body" rows="10")
+      button.create-task-btn Add a new task
